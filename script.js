@@ -21,38 +21,20 @@ function playRound(playerSelection) {
     switch (true) {
         case computerSelection === playerSelection:
             return playRound(playerSelection);
-            break;
 
-        case computerSelection === 'rock' && playerSelection === 'paper':
-            ++playerPoints;
-            return 'Player chose paper and computer chose rock \n Player wins this round!';
-            break;
-
-        case computerSelection === 'rock' && playerSelection === 'scissors':
-            ++botPoints;
-            return 'Player chose scissors and computer chose rock \nComputer wins this round!';
-            break;
-
-        case computerSelection === 'paper' && playerSelection === 'rock':
-            ++botPoints;
-            return 'Player chose rock and computer chose paper \nComputer wins this round!';
-            break;
-
+        case computerSelection === 'rock' && playerSelection === 'paper':  
         case computerSelection === 'paper' && playerSelection === 'scissors':
-            ++playerPoints;
-            return 'Player chose scissors and computer chose paper \nPlayer wins this round!';
-            break;
-
         case computerSelection === 'scissors' && playerSelection === 'rock':
             ++playerPoints;
-            return 'Player chose rock and computer chose scissors \nPlayer wins this round!';
-            break;
-    
+            return 'Player chose ' + playerSelection + ' and computer chose ' + computerSelection + 
+                    ' \nPlayer wins this round!'; 
+                    
+        case computerSelection === 'rock' && playerSelection === 'scissors':
+        case computerSelection === 'paper' && playerSelection === 'rock':
         case computerSelection === 'scissors' && playerSelection === 'paper':
             ++botPoints;
-            return 'Player chose paper and computer chose scissors \nComputer wins this round!';
-            break;
-
+            return 'Player chose ' + playerSelection + ' and computer chose ' + computerSelection + 
+                    ' \nComputer wins this round!';
     }
 }
 
